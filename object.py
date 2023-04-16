@@ -14,3 +14,14 @@ def hash_object(data, object_type, write=True):
         with open(object_path, 'wb') as f:
             f.write(zlib.compress(object_data))
     return object_hash
+
+def read_object(object_hash):
+    subdir = object_hash[:2]
+    object_file = object_hash[2:]
+    object_path = os.path.join('.git', 'objects', subdir, object_file)
+    object_data = bytes()
+    with open(object_path, 'rb') as f:
+        object_data = f.read()
+    header, data = object_data.split(b'\x00')
+    object_type, data_length = header.split(b' ')
+    return object_type, data
