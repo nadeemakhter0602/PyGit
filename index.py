@@ -10,3 +10,6 @@ def read_index():
     header = raw[:12]
     signature = raw[:4]
     assert signature == b"DIRC"
+    version = int.from_bytes(header[4:8], "big")
+    assert version == 2
+    count = int.from_bytes(header[8:12], "big")
