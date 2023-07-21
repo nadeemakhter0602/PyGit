@@ -23,3 +23,6 @@ def read_index():
         ctime_s = int.from_bytes(content[idx : idx + 4], "big")
         # read creation time nanoseconds
         ctime_ns = int.from_bytes(content[idx + 4 : idx + 8], "big")
+        # read modification time, same format as before
+        mtime_s = int.from_bytes(content[idx + 8 : idx + 12], "big")
+        mtime_ns = int.from_bytes(content[idx + 12 : idx + 16], "big")
