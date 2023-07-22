@@ -21,8 +21,12 @@ def read_index():
     for i in range(count):
         # read creation time as a unix timestamp
         ctime_s = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
         # read creation time nanoseconds
-        ctime_ns = int.from_bytes(content[idx + 4 : idx + 8], "big")
+        ctime_ns = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
         # read modification time, same format as before
-        mtime_s = int.from_bytes(content[idx + 8 : idx + 12], "big")
-        mtime_ns = int.from_bytes(content[idx + 12 : idx + 16], "big")
+        mtime_s = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
+        mtime_ns = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
