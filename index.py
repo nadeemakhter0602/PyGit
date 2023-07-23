@@ -30,3 +30,6 @@ def read_index():
         idx += 4
         mtime_ns = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # read device ID
+        dev = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
