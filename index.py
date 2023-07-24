@@ -33,3 +33,5 @@ def read_index():
         # read device ID
         dev = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # read Inode
+        ino = int.from_bytes(content[idx : idx + 4], "big")
