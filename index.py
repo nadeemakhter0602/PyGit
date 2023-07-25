@@ -35,3 +35,4 @@ def read_index():
         idx += 4
         # read Inode
         ino = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
