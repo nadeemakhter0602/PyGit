@@ -36,3 +36,6 @@ def read_index():
         # read Inode
         ino = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # read 32-bit mode, first 2 bytes unused
+        unused = int.from_bytes(content[idx : idx + 2], "big")
+        idx += 2
