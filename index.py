@@ -39,3 +39,5 @@ def read_index():
         # read 32-bit mode, first 2 bytes unused
         unused = int.from_bytes(content[idx : idx + 2], "big")
         idx += 2
+        # first 2 bytes must be 0
+        assert 0 == unused
