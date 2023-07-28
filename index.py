@@ -41,3 +41,5 @@ def read_index():
         idx += 2
         # first 2 bytes must be 0
         assert 0 == unused
+        # get next 2 bytes containing actual mode information
+        mode = int.from_bytes(content[idx : idx + 2], "big")
