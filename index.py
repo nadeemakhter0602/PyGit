@@ -43,3 +43,5 @@ def read_index():
         assert 0 == unused
         # get next 2 bytes containing actual mode information
         mode = int.from_bytes(content[idx : idx + 2], "big")
+        # read 4-bit object type
+        object_type = mode >> 12
