@@ -45,3 +45,6 @@ def read_index():
         mode = int.from_bytes(content[idx : idx + 2], "big")
         # read 4-bit object type
         object_type = mode >> 12
+        # valid values for object type include:
+        # 1000 (regular file), 1010 (symbolic link) and 1110 (gitlink)
+        assert object_type in [0b1000, 0b1010, 0b1110]
