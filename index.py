@@ -48,3 +48,6 @@ def read_index():
         # valid values for object type include:
         # 1000 (regular file), 1010 (symbolic link) and 1110 (gitlink)
         assert object_type in [0b1000, 0b1010, 0b1110]
+        # next 3 bits unused, must be zero
+        # read 9-bit unix permission
+        unix_perm = mode & 0b0000000111111111
