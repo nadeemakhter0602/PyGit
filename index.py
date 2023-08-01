@@ -51,3 +51,4 @@ def read_index():
         # next 3 bits unused, must be zero
         # read 9-bit unix permission
         unix_perm = mode & 0b0000000111111111
+        idx += 2
