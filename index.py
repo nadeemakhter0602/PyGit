@@ -52,3 +52,6 @@ def read_index():
         # read 9-bit unix permission
         unix_perm = mode & 0b0000000111111111
         idx += 2
+        # read User ID
+        uid = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
