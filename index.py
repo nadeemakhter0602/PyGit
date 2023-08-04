@@ -55,3 +55,6 @@ def read_index():
         # read User ID
         uid = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # read Group ID
+        gid = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
