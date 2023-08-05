@@ -58,3 +58,6 @@ def read_index():
         # read Group ID
         gid = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # read on-disk file size, truncated to 32-bit
+        fsize = int.from_bytes(content[idx : idx + 4], "big")
+        idx += 4
