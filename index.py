@@ -61,3 +61,6 @@ def read_index():
         # read on-disk file size, truncated to 32-bit
         fsize = int.from_bytes(content[idx : idx + 4], "big")
         idx += 4
+        # object ID in the form of SHA-1 hash of an object
+        # size of hash is 20 bytes
+        sha = int.from_bytes(content[idx : idx + 20], "big")
