@@ -64,3 +64,5 @@ def read_index():
         # object ID in the form of SHA-1 hash of an object
         # size of hash is 20 bytes
         sha = int.from_bytes(content[idx : idx + 20], "big")
+        # convert hash bytes to lowercase hex string
+        sha = format(sha, "040x")
