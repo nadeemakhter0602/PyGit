@@ -67,3 +67,5 @@ def read_index():
         # convert hash bytes to lowercase hex string
         sha = format(sha, "040x")
         idx += 20
+        # read 16-bit 'flags'
+        flags = int.from_bytes(content[idx : idx + 2], "big")
