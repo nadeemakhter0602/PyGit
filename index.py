@@ -71,3 +71,5 @@ def read_index():
         flags = int.from_bytes(content[idx : idx + 2], "big")
         # read 1-bit assume-valid flag
         flag_assume_valid = (flags & 0b1000000000000000) != 0
+        # read 1-bit extended flag
+        flag_extended = (flags & 0b0100000000000000) != 0
