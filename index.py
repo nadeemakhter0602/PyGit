@@ -73,3 +73,5 @@ def read_index():
         flag_assume_valid = (flags & 0b1000000000000000) != 0
         # read 1-bit extended flag
         flag_extended = (flags & 0b0100000000000000) != 0
+        # extended flag must be zero in version 2
+        assert not flag_extended
