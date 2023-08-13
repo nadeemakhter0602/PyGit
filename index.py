@@ -75,3 +75,5 @@ def read_index():
         flag_extended = (flags & 0b0100000000000000) != 0
         # extended flag must be zero in version 2
         assert not flag_extended
+        # read 2-bit stage
+        flag_stage = flags & 0b0011000000000000
