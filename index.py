@@ -77,3 +77,5 @@ def read_index():
         assert not flag_extended
         # read 2-bit stage
         flag_stage = flags & 0b0011000000000000
+        # read 12-bit name length
+        name_length = flags & 0b0000111111111111
