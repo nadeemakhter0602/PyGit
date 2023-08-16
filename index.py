@@ -80,3 +80,7 @@ def read_index():
         # read 12-bit name length
         name_length = flags & 0b0000111111111111
         idx += 2
+        # value of name length is 0xFFF if length is greater than 0xFFF
+        if name_length < 0xFFF:
+            # check if name length is NUL-terminated
+            assert content[idx + name_length] == 0x00
