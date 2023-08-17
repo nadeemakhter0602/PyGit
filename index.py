@@ -84,3 +84,8 @@ def read_index():
         if name_length < 0xFFF:
             # check if name length is NUL-terminated
             assert content[idx + name_length] == 0x00
+            # read Entry path name (variable length) relative to top level directory
+            # (without leading slash). '/' is used as path separator. The special
+            # path components ".", ".." and ".git" (without quotes) are disallowed.
+            # Trailing slash is also disallowed.
+            raw_name = content[idx : idx + name_length]
