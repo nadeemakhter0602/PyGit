@@ -89,3 +89,4 @@ def read_index():
             # path components ".", ".." and ".git" (without quotes) are disallowed.
             # Trailing slash is also disallowed.
             raw_name = content[idx : idx + name_length]
+            idx += name_length
