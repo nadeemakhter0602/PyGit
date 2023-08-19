@@ -90,3 +90,9 @@ def read_index():
             # Trailing slash is also disallowed.
             raw_name = content[idx : idx + name_length]
             idx += name_length
+        else:
+            # read Entry path name (variable length)
+            raw_name = b""
+            while content[idx] != 0x00:
+                raw_name += content[idx]
+                idx += 1
