@@ -96,3 +96,5 @@ def read_index():
             while content[idx] != 0x00:
                 raw_name += content[idx]
                 idx += 1
+        # decode Entry path name bytes as UTF-8
+        name = raw_name.encode()
