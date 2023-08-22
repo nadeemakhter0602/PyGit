@@ -23,6 +23,8 @@ def read_object(object_hash):
     object_data = bytes()
     with open(object_path, "rb") as f:
         object_data = f.read()
+    # decompress zlib-compressed data
+    object_data = zlib.decompress(object_data)
     header, data = object_data.split(b"\x00")
     object_type, data_length = header.split(b" ")
     return object_type, data
