@@ -29,5 +29,5 @@ def read_object(object_hash):
     object_data = zlib.decompress(object_data)
     header, data = object_data.split(b"\x00")
     object_type, data_length = header.split(b" ")
-    assert data_length == len(object_data)
+    assert data_length == len(data)
     return object_type, data
