@@ -12,9 +12,12 @@ def hash_object(data, object_type, write=True):
     object_file = object_hash[2:]
     if write:
         object_path = os.path.join(".git", "objects", subdir, object_file)
-        with open(object_path, "wb") as f:
-            # compress object data using zlib
-            f.write(zlib.compress(object_data))
+        if not os.path.exists(object_path):
+            # create directories and subdirectories for object path
+            os.makedirs(os.path.dirname(object_path), exist_ok=True)
+            with open(object_path, "wb") as f:
+                # compress object data using zlib
+                f.write(zlib.compress(object_data))
     return object_hash
 
 
