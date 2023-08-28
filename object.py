@@ -25,6 +25,8 @@ def read_object(object_hash):
     subdir = object_hash[:2]
     object_file = object_hash[2:]
     object_path = os.path.join(".git", "objects", subdir, object_file)
+    if not os.path.exists(object_path):
+        raise Exception("Object does not exist")
     object_data = bytes()
     with open(object_path, "rb") as f:
         object_data = f.read()
