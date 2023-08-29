@@ -98,3 +98,7 @@ def read_index():
                 idx += 1
         # decode Entry path name bytes as UTF-8
         name = raw_name.decode()
+        # index entry contains 1-8 nul bytes as necessary to
+        # pad the entry to a multiple of eight bytes
+        # while keeping the name NUL-terminated.
+        idx = 8 * (idx // 8) + 8
