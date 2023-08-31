@@ -106,3 +106,8 @@ class GitIndex:
             # pad the entry to a multiple of eight bytes
             # while keeping the name NUL-terminated.
             idx = 8 * (idx // 8) + 8
+
+
+class GitIndexEntry:
+    def __init__(self) -> None:
+        pass
