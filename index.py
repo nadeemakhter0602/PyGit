@@ -109,5 +109,22 @@ class GitIndex:
 
 
 class GitIndexEntry:
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        ctime_s=None,
+        ctime_ns=None,
+        mtime_s=None,
+        mtime_ns=None,
+        dev=None,
+        ino=None,
+        object_type=None,
+        unix_perm=None,
+        uid=None,
+        gid=None,
+        fsize=None,
+        sha=None,
+        flag_assume_valid=None,
+        flag_stage=None,
+        name=None,
+    ) -> None:
         pass
