@@ -127,4 +127,18 @@ class GitIndexEntry:
         flag_stage=None,
         name=None,
     ) -> None:
-        pass
+        self.ctime_s = ctime_ns
+        self.ctime_ns = ctime_ns
+        self.mtime_s = mtime_s
+        self.mtime_ns = mtime_ns
+        self.dev = dev
+        self.ino = ino
+        self.object_type = object_type
+        self.unix_perm = unix_perm
+        self.uid = uid
+        self.gid = gid
+        self.fsize = fsize
+        self.sha = sha
+        self.flag_assume_valid = flag_assume_valid
+        self.flag_stage = flag_stage
+        self.name = name
