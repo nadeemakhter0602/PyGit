@@ -127,7 +127,7 @@ class GitIndexEntry:
         flag_stage=None,
         name=None,
     ) -> None:
-        self.ctime_s = ctime_ns
+        self.ctime_s = ctime_s
         self.ctime_ns = ctime_ns
         self.mtime_s = mtime_s
         self.mtime_ns = mtime_ns
