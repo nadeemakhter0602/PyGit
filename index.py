@@ -106,6 +106,23 @@ class GitIndex:
             # pad the entry to a multiple of eight bytes
             # while keeping the name NUL-terminated.
             idx = 8 * (idx // 8) + 8
+            index_entry = GitIndexEntry(
+                ctime_s=ctime_s,
+                ctime_ns=ctime_ns,
+                mtime_s=mtime_s,
+                mtime_ns=mtime_ns,
+                dev=dev,
+                ino=ino,
+                object_type=object_type,
+                unix_perm=unix_perm,
+                uid=uid,
+                gid=gid,
+                fsize=fsize,
+                sha=sha,
+                flag_assume_valid=flag_assume_valid,
+                flag_stage=flag_stage,
+                name=name,
+            )
 
 
 class GitIndexEntry:
