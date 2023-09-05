@@ -123,6 +123,7 @@ class GitIndex:
                 flag_stage=flag_stage,
                 name=name,
             )
+            entries.append(index_entry)
 
 
 class GitIndexEntry:
